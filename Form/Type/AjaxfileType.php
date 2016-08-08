@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Options;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 
 class AjaxfileType extends AbstractType
 {
@@ -49,10 +50,10 @@ class AjaxfileType extends AbstractType
 
     public function getParent()
     {
-        return 'form';
+        return  FormType::class;
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'bnbc_ajax_file';
     }
