@@ -23,7 +23,6 @@
         {% if form.vars.dropZone %}
         <div id="{{ id }}_dropzone" class="bnbc-ajax-file-dropzone">{{ form.vars.dropZoneText }}</div>
         {% endif %}
-
         <script type="text/javascript">
 
             {# Surcharge des options d'upload #}
@@ -83,7 +82,6 @@
 
                 {# Fix refresh page #}
                 $('#' + original_id).val('');
-
                 {# Call fileupload plugin #}
                 $('#' + id).fileupload({
                     url: '{{ path('bnbc_upload_default_index') }}',
@@ -136,7 +134,7 @@
                                     li.addClass('active');
                             }
                         });
-                        {% if form.vars.callbackFunction %}
+                        {% if callbackFunction %}
                         {{callbackFunction}}();
                         {% endif %}
                     }
